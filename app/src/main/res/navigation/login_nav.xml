@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.altamirano.proyectofinal.ui.fragments.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_loginFragment_to_recoveryFragment"
+            app:destination="@id/recoveryFragment"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.altamirano.proyectofinal.ui.fragments.login.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoveryFragment"
+        android:name="com.altamirano.proyectofinal.ui.fragments.login.RecoveryFragment"
+        android:label="fragment_recovery"
+        tools:layout="@layout/fragment_recovery">
+        <action
+            android:id="@+id/action_recoveryFragment_to_loginFragment"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
