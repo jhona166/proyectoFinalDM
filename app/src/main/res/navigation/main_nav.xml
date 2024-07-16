@@ -2,8 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_nav">
+    android:id="@+id/main_nav"
+    app:startDestination="@id/rickAndMortyFragment">
 
 
-
+    <fragment
+        android:id="@+id/rickAndMortyFragment"
+        android:name="com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment"
+        android:label="fragment_rick_and_morty"
+        tools:layout="@layout/fragment_rick_and_morty" />
 </navigation>

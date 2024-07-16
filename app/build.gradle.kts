@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.ksp)
     id("androidx.navigation.safeargs.kotlin")
 
+    id ("kotlin-parcelize")
+
 
 
 }
@@ -95,4 +97,6 @@ dependencies {
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.2")
 
+
+    implementation ("com.squareup.picasso:picasso:2.8")
 }

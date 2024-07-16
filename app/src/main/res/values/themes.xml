@@ -37,7 +37,7 @@
 
     <style name="EditTextLogin">
         <item name="android:height">62dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:drawableTint">@color/white</item>
         <item name="android:textColorHint">@color/gray</item>
         <item name="android:background">@drawable/edittext_rounded</item>
