@@ -13,25 +13,21 @@ import com.altamirano.proyectofinal.logic.data.RamChars
 
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
+import java.util.Collections
 
 class RickAndMortyAdapter(
     private var fnClick: (RamChars) -> Unit,
     private var fnSave: (RamChars) -> Boolean
-) :
-    RecyclerView.Adapter<RickAndMortyAdapter.RamViewHolder>() {
+) : RecyclerView.Adapter<RickAndMortyAdapter.RamViewHolder>() {
+
     var items: List<RamChars> = listOf()
 
-    class RamViewHolder(view: View) :
-        RecyclerView.ViewHolder(view) {
-
+    class RamViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var binding: ListadoramBinding = ListadoramBinding.bind(view)
 
-        //conectamos el objeto con el layout
         fun render(
             item: RamChars, fnClick: (RamChars) -> Unit, fnSave: (RamChars) -> Boolean
         ) {
-
-            //println("Recibiendo a ${item.name}")
             binding.txtNombre.text = item.nombre
             binding.txtEstado.text = item.estado
             binding.textEspecie.text = item.especie
@@ -49,28 +45,23 @@ class RickAndMortyAdapter(
                 ).show()
             }
             binding.btnFav.setOnClickListener {
-                var checkInsert: Boolean = false
-                checkInsert = fnSave(item)
+                val checkInsert = fnSave(item)
                 if (checkInsert) {
                     Snackbar.make(
                         binding.imgRam,
-                        "Se agrego a favoritos",
+                        "Se agregó a favoritos",
                         Snackbar.LENGTH_SHORT
                     ).show()
-
                 } else {
                     Snackbar.make(
                         binding.imgRam,
-                        "No se puedo agregar  Ya esta agregado",
+                        "No se pudo agregar. Ya está agregado",
                         Snackbar.LENGTH_SHORT
                     ).show()
                 }
             }
         }
-
     }
-
-    //Los tres metodos se ejecutan cuando se ingresa un elemento de la lista
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -86,18 +77,23 @@ class RickAndMortyAdapter(
     }
 
     override fun onBindViewHolder(holder: RickAndMortyAdapter.RamViewHolder, position: Int) {
-        holder.render(items[position], fnClick,fnSave)
+        holder.render(items[position], fnClick, fnSave)
     }
 
     override fun getItemCount(): Int = items.size
 
     fun updateListItems(newItems: List<RamChars>) {
-        this.items = this.items.plus(newItems)
+        val updatedItems = items.toMutableList()
+        updatedItems.addAll(newItems)
+        Collections.shuffle(updatedItems)
+        this.items = updatedItems
         notifyDataSetChanged()
     }
 
     fun replaceListItems(newItems: List<RamChars>) {
-        this.items = newItems
+        val shuffledItems = newItems.toMutableList()
+        Collections.shuffle(shuffledItems)
+        this.items = shuffledItems
         notifyDataSetChanged()
     }
 }

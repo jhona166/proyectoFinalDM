@@ -45,12 +45,12 @@ class RamLogic {
                 RamChars(
                     it.id,
                     it.nombre,
-                it.estado,
-            it.especie,
-            it.ubicacion,
-            it.origen,
-            it.imagen,
-            it.episode
+                    it.estado,
+                    it.especie,
+                    it.ubicacion,
+                    it.origen,
+                    it.imagen,
+                    it.episode
                 )
             )
         }

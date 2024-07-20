@@ -35,8 +35,8 @@ class RickAndMortyFragment : Fragment() {
     private var rvAdapter: RickAndMortyAdapter =
         RickAndMortyAdapter({ sendRamItem(it) }, { saveRamItem(it) })
     private var page: Int = 1
-    private var offset: Int = 0
-    private val limit: Int = 99
+    private var offset: Int = 16
+    private val limit: Int = 34
 
 
     private var ramCharsItems: MutableList<RamChars> = mutableListOf<RamChars>()
