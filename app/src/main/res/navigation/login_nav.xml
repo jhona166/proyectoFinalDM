@@ -20,9 +20,6 @@
             app:destination="@id/recoveryFragment"
             app:popEnterAnim="@android:anim/fade_in"
             app:enterAnim="@android:anim/slide_in_left" />
-        <action
-            android:id="@+id/action_loginFragment_to_rickAndMortyFragment3"
-            app:destination="@id/rickAndMortyFragment3" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -46,9 +43,4 @@
             app:enterAnim="@android:anim/slide_out_right"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/rickAndMortyFragment3"
-        android:name="com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment"
-        android:label="fragment_rick_and_morty"
-        tools:layout="@layout/fragment_rick_and_morty" />
 </navigation>

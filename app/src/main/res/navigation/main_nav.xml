@@ -3,11 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/rickAndMortyFragment">
-
-
+    app:startDestination="@id/principalFragment">
     <fragment
-        android:id="@+id/rickAndMortyFragment"
+        android:id="@+id/principalFragment"
+        android:name="com.altamirano.proyectofinal.ui.fragments.PrincipalFragment"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_principalFragment_to_rickAndMortyFragment2"
+            app:destination="@id/rickAndMortyFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/rickAndMortyFragment2"
         android:name="com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment"
         android:label="fragment_rick_and_morty"
         tools:layout="@layout/fragment_rick_and_morty" />
