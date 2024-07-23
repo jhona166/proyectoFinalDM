@@ -25,8 +25,5 @@ class RickAndMorty : AppCompatActivity() {
         FragmentsManager().replaceFragmet(supportFragmentManager,
             binding.frmContainer.id, RickAndMortyFragment()
         )
-
-
-
     }
 }

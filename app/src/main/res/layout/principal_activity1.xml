@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".ui.activities.PrincipalActivity"
-    android:background="@drawable/fondo"
-    >
+    android:background="@drawable/fondo">
 
 
     <FrameLayout

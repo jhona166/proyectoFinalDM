@@ -35,7 +35,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="364dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/historieta">
+                android:background="@drawable/presentacion5">
 
 
                 <ImageView
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="8dp"
-                    android:background="@android:color/transparent"
+
                     android:fontFamily="@font/indie"
                     android:textColor="@color/white"
                     android:textSize="30sp"
@@ -99,7 +99,7 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="8dp"
 
-                    android:background="@color/black"
+
                     android:fontFamily="@font/indie"
                     android:text="TextView"
                     android:textColor="@color/white"
