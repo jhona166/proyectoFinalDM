@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.altamirano.proyectofinal.R
+
 import com.altamirano.proyectofinal.databinding.ListadoramBinding
 import com.altamirano.proyectofinal.logic.data.RamChars
 

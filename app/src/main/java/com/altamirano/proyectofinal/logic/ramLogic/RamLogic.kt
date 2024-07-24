@@ -14,27 +14,37 @@ import com.altamirano.proyectofinal.ui.utilities.ProyectoFinal
 class RamLogic {
 
     suspend fun getAllCharactersRam(): List<RamChars> {
+        val itemList = mutableListOf<RamChars>()
 
-        var itemList = arrayListOf<RamChars>()
-
-
-        val response =
-            ApiConnection.getService(
+        //Consumo del EndPoint
+        for (page in 1..5) {
+            val response = ApiConnection.getService(
                 ApiConnection.typeApi.RickAndMorty,
                 RickAndMortyEndpoint::class.java
-            ).getAllCharacters()
-
-        if (response.isSuccessful) {
-            response.body()!!.results.forEach {
-
-
-                val me = it.getRamChars()
-
-                itemList.add(me)
+            ).getAllCharacters(page)
+            if (response.isSuccessful) {
+                response.body()?.results?.forEach {
+                    val me = it.getRamChars()
+                    itemList.add(me)
+                }
+            } else {
+                // Manejo de errores según sea necesario
+                break
             }
         }
 
         return itemList
+
+
+
+
+
+
+
+
+
+
+
     }
 
     suspend fun getAllRamCharsDB(): List<RamChars> {
