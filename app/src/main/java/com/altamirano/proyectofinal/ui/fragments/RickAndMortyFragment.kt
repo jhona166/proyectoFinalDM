@@ -1,0 +1,214 @@
+package com.altamirano.proyectofinal.ui.fragments
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.altamirano.proyectofinal.databinding.FragmentRickAndMortyBinding
+import com.altamirano.proyectofinal.logic.Metodos
+import com.altamirano.proyectofinal.logic.data.RamChars
+import com.altamirano.proyectofinal.logic.ramLogic.RamLogic
+import com.altamirano.proyectofinal.ui.activities.DetailsRamItem
+import com.altamirano.proyectofinal.ui.adapters.RickAndMortyAdapter
+
+
+import com.google.android.material.carousel.CarouselLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+
+class RickAndMortyFragment : Fragment() {
+    private lateinit var binding: FragmentRickAndMortyBinding
+
+    private lateinit var lmanager: CarouselLayoutManager
+    private var rvAdapter: RickAndMortyAdapter =
+        RickAndMortyAdapter({ sendRamItem(it) }, { saveRamItem(it) })
+    private var page: Int = 1
+    private var offset: Int = 16
+    private val limit: Int = 34
+
+
+    private var ramCharsItems: MutableList<RamChars> = mutableListOf<RamChars>()
+    private var ramCharsItemsDB: MutableList<RamChars> = mutableListOf<RamChars>()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+
+        binding = FragmentRickAndMortyBinding.inflate(layoutInflater, container, false)
+
+        // Inflate the layout for this fragment
+        lmanager = CarouselLayoutManager()
+
+        return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        chargeDataRVInit()
+        binding.rvSwipe.setOnRefreshListener {
+            chargeDataRV()
+            binding.rvSwipe.isRefreshing = false
+        }
+
+    }
+
+
+    private fun sendRamItem(item: RamChars): Unit {
+        val i = Intent(requireActivity(), DetailsRamItem::class.java)
+        i.putExtra("name", item)
+        startActivity(i)
+    }
+
+    private fun saveRamItem(item: RamChars): Boolean {
+
+        return if (item == null || ramCharsItemsDB.contains(item)) {
+            false
+        } else {
+
+            lifecycleScope.launch(Dispatchers.Main) {
+                withContext(Dispatchers.IO) {
+                    RamLogic().insertRamCharstoDB(listOf(item))
+                    ramCharsItemsDB = RamLogic().getAllRamCharsDB().toMutableList()
+                }
+
+            }
+            true
+        }
+
+        return false
+    }
+
+
+    fun chargeDataRV() {
+
+
+        lifecycleScope.launch(Dispatchers.Main) {
+
+            ramCharsItems = withContext(Dispatchers.IO) {
+
+
+                return@withContext (RamLogic().getAllCharactersRam())
+            } as MutableList<RamChars>
+
+
+            rvAdapter.items = ramCharsItems
+
+            binding.rvdatos.apply {
+                this.adapter = rvAdapter
+                this.layoutManager = lmanager
+            }
+
+        }
+    }
+
+//    fun updateDataRV(limit: Int, offset: Int) {
+//
+//        var items: List<MarvelChars> = listOf()
+//        lifecycleScope.launch(Dispatchers.Main) {
+//
+//            items = withContext(Dispatchers.IO) {
+//
+//
+//                return@withContext (MarvelLogic().getAllMarvelChars(offset, limit))
+//            }
+//
+//
+//            rvAdapter.updateListItems(items)
+//
+//            binding.rvMarvelChars.apply {
+//                this.adapter = rvAdapter
+//                this.layoutManager = gManager
+//            }
+//        }
+//
+//
+//    }
+
+//    fun updateAdapterRV() {
+//        lifecycleScope.launch(Dispatchers.Main) {
+//            binding.rvMarvelChars.apply {
+//                this.adapter = rvAdapter
+//                this.layoutManager = gManager
+//            }
+//        }
+//
+//    }
+
+    fun chargeDataRVInit() {
+
+        if (Metodos().isOnline(requireActivity())) {
+
+
+            lifecycleScope.launch(Dispatchers.Main) {
+
+                ramCharsItems = withContext(Dispatchers.IO) {
+
+
+                    return@withContext (RamLogic().getAllCharactersRam())
+                } as MutableList<RamChars>
+
+                rvAdapter.items = ramCharsItems
+
+                binding.rvdatos.apply {
+                    this.adapter = rvAdapter
+                    this.layoutManager = lmanager
+                }
+
+
+            }
+
+        } else {
+            Snackbar.make(
+                binding.rvdatos,
+                "No hay conexion",
+                Snackbar.LENGTH_LONG
+            )
+                .show()
+        }
+    }
+
+
+//    override fun onResume() {
+//        super.onResume()
+//        lifecycleScope.launch(Dispatchers.Main) {
+//            withContext(Dispatchers.IO) {
+//                marvelCharsItemsDB = MarvelLogic().getAllMarvelChardDB().toMutableList()
+//            }
+//
+//        }
+//    }
+
+
+//    private fun getDataStore() =
+//
+//        requireActivity().dataStore.data.map {
+//            // si no me devuelve nada me devuelve vacio, no  devuelve valor nos devuelve una lista de valores siempre que lo ejecutamos
+//                prefs ->
+//
+//            UserDataStore(
+//                name = prefs[stringPreferencesKey("usuario")].orEmpty(),
+//                email = prefs[stringPreferencesKey("email")].orEmpty(),
+//                session = prefs[stringPreferencesKey("session")].orEmpty()
+//
+//
+//            )
+//
+//        }
+
+
+}
+
+

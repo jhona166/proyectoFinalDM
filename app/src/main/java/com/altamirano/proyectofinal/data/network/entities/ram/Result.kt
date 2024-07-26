@@ -1,8 +1,6 @@
 package com.altamirano.proyectofinal.data.network.entities.ram
 
-import com.example.dispositivosmoviles.data.entities.ram.Result
-import com.example.dispositivosmoviles.logic.data.MarvelChars
-import com.example.dispositivosmoviles.logic.data.RamChars
+import com.altamirano.proyectofinal.logic.data.RamChars
 
 data class Result(
     val created: String,

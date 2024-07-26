@@ -3,6 +3,7 @@ package com.altamirano.proyectofinal.data.network.dao.marvel
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.altamirano.proyectofinal.data.network.entities.ram.database.RamCharsDB
 
 @Dao
 interface RamCharsDAO {

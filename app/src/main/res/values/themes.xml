@@ -37,7 +37,7 @@
 
     <style name="EditTextLogin">
         <item name="android:height">62dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:drawableTint">@color/white</item>
         <item name="android:textColorHint">@color/gray</item>
         <item name="android:background">@drawable/edittext_rounded</item>
@@ -82,4 +82,12 @@
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">8dp</item>
     </style>
+
+
+    <style name="activeIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/red</item>
+    </style>
+
+
+
 </resources>

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.altamirano.proyectofinal.R
 import com.altamirano.proyectofinal.databinding.FragmentLoginBinding
 import com.altamirano.proyectofinal.ui.activities.MainActivity
+import com.altamirano.proyectofinal.ui.activities.PrincipalActivity1
 import com.altamirano.proyectofinal.ui.viewmodels.login.LoginFragmentVM
 
 import kotlinx.coroutines.launch
@@ -60,10 +61,19 @@ class LoginFragment : Fragment() {
 
         loginFragmentVM.idUser.observe(viewLifecycleOwner) { id ->
 
+//            startActivity(
+//                Intent(
+//                    requireActivity(),
+//                    MainActivity::class.java
+//                )
+//            )
+//            requireActivity().finish()
+//        }
+
             startActivity(
                 Intent(
                     requireActivity(),
-                    MainActivity::class.java
+                    PrincipalActivity1::class.java // Cambia MainActivity por PrincipalActivity
                 )
             )
             requireActivity().finish()
