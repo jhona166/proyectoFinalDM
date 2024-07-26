@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -85,8 +86,7 @@ dependencies {
     // SplashScreen
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-    // DataStore
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+
 
 
     // Fragment, activity viewmodel
@@ -97,6 +97,10 @@ dependencies {
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.2")
 
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
-    implementation ("com.squareup.picasso:picasso:2.8")
+
+    implementation("com.squareup.picasso:picasso:2.8")
+
 }

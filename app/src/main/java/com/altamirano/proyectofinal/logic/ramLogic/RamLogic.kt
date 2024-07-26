@@ -17,7 +17,7 @@ class RamLogic {
         val itemList = mutableListOf<RamChars>()
 
         //Consumo del EndPoint
-        for (page in 1..5) {
+        for (page in 1..3) {
             val response = ApiConnection.getService(
                 ApiConnection.typeApi.RickAndMorty,
                 RickAndMortyEndpoint::class.java

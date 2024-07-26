@@ -8,9 +8,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiConnection {
 
     enum class typeApi {
-        RickAndMorty
+                       Marvel, RickAndMorty
     }
 
+
+    private val API_MARVEL = "https://gateway.marvel.com/v1/public/"
 
     private val API_RAM= "https://rickandmortyapi.com/api/"
 
@@ -26,6 +28,12 @@ object ApiConnection {
     suspend fun <T, E : Enum<E>> getService(api: E, service: Class<T>): T {
         var BASE = ""
         when (api.name) {
+
+            typeApi.Marvel.name -> {
+                BASE = API_MARVEL
+
+
+            }
 
             typeApi.RickAndMorty.name -> {
                 BASE = API_RAM

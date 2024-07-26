@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.fragment.app.FragmentManager
 import com.altamirano.proyectofinal.R
 import com.altamirano.proyectofinal.databinding.PrincipalActivity1Binding
+import com.altamirano.proyectofinal.ui.fragments.FirstFragment
 import com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment
 import com.altamirano.proyectofinal.ui.utilities.FragmentsManager
 
@@ -69,7 +70,8 @@ class PrincipalActivity1 : AppCompatActivity() {
 //                    transaction.commit() //guarda los cambios
 
                     FragmentsManager().replaceFragmet(supportFragmentManager,
-                        binding.frmContainer.id, RickAndMortyFragment())
+                        binding.frmContainer.id, FirstFragment()
+                    )
                     true
                 }
 
