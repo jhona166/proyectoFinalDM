@@ -10,6 +10,7 @@ import com.altamirano.proyectofinal.databinding.PrincipalActivity1Binding
 import com.altamirano.proyectofinal.ui.core.UIStates
 import com.altamirano.proyectofinal.ui.fragments.FirstFragment
 import com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment
+import com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment1
 import com.altamirano.proyectofinal.ui.utilities.FragmentsManager
 import kotlinx.coroutines.delay
 
@@ -59,7 +60,7 @@ class PrincipalActivity1 : AppCompatActivity() {
 //                    transaction.commit() //guarda los cambios
 
                     FragmentsManager().replaceFragmet(supportFragmentManager,
-                        binding.frmContainer.id, RickAndMortyFragment())
+                        binding.frmContainer.id, FirstFragment())
                     true
                 }
 
@@ -72,7 +73,7 @@ class PrincipalActivity1 : AppCompatActivity() {
 //                    transaction.commit() //guarda los cambios
 
                     FragmentsManager().replaceFragmet(supportFragmentManager,
-                        binding.frmContainer.id, FirstFragment()
+                        binding.frmContainer.id, RickAndMortyFragment1()
                     )
                     true
                 }

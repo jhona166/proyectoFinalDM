@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.carousel.MaskableFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carousel_item_container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="726dp"
+        android:layout_gravity="center"
+        android:background="@color/black">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="370dp"
+            android:layout_height="700dp"
+            android:layout_margin="25dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="364dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/presentacion5">
+
+                <ImageView
+                    android:id="@+id/imgRam"
+                    android:layout_width="350dp"
+                    android:layout_height="265dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtNombre"
+                    android:layout_width="235dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/permanent"
+                    android:textColor="@color/extrate"
+                    android:textSize="40sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgRam"
+                    tools:text="Marvel" />
+
+                <TextView
+                    android:id="@+id/txtEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/indie"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+                    tools:text="Marvel" />
+
+                <TextView
+                    android:id="@+id/textEspecie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/indie"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtEstado"
+                    tools:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textUbicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/indie"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textEspecie"
+                    tools:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textOrigen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/indie"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textUbicacion"
+                    tools:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textEpisode"
+                    android:layout_width="169dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/indie"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textOrigen"
+                    tools:text="TextView" />
+
+                <Button
+                    android:id="@+id/btn_fav"
+                    android:layout_width="76dp"
+                    android:layout_height="61dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="#00FFFFFF"
+                    app:cornerRadius="0dp"
+                    app:icon="@drawable/favorite_48px"
+                    app:iconGravity="top"
+                    app:iconSize="40dp"
+                    app:iconTint="#DD0000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.carousel.MaskableFrameLayout>
