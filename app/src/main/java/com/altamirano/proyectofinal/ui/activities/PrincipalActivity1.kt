@@ -7,10 +7,11 @@ import android.util.Log
 import androidx.fragment.app.FragmentManager
 import com.altamirano.proyectofinal.R
 import com.altamirano.proyectofinal.databinding.PrincipalActivity1Binding
+import com.altamirano.proyectofinal.ui.core.UIStates
 import com.altamirano.proyectofinal.ui.fragments.FirstFragment
 import com.altamirano.proyectofinal.ui.fragments.RickAndMortyFragment
 import com.altamirano.proyectofinal.ui.utilities.FragmentsManager
-
+import kotlinx.coroutines.delay
 
 
 class PrincipalActivity1 : AppCompatActivity() {
@@ -46,6 +47,7 @@ class PrincipalActivity1 : AppCompatActivity() {
                     FragmentsManager().replaceFragmet(supportFragmentManager,
                         binding.frmContainer.id, RickAndMortyFragment())
                     true
+
                 }
 
                 R.id.favoritos -> {

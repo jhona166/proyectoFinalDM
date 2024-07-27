@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
     private lateinit var managerUIStates: ManageUIStates
     private val loginFragmentVM: LoginFragmentVM by viewModels()
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var manageUIState: ManageUIStates
     private lateinit var sharedPreferences: SharedPreferences
     private val sharedPreferencesEditor: SharedPreferences.Editor by lazy {
         sharedPreferences.edit()
@@ -65,6 +65,13 @@ class LoginFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         managerUIStates = ManageUIStates(requireActivity(), binding.lytLoading.mainLayout)
         sharedPreferences = requireContext().getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
+
+
+        manageUIState = ManageUIStates(
+            requireContext(),
+            binding.lytLoading.mainLayout
+        )
+
     }
 
     private fun initiObservers() {
@@ -143,6 +150,9 @@ class LoginFragment : Fragment() {
                 requireActivity().finish()
             } else {
                 Toast.makeText(requireContext(), "No nickname found", Toast.LENGTH_SHORT).show()
+
+
+
                 val nickname = document.getString("nickname") ?: "Nickname"
                 val intent = Intent(requireActivity(), PrincipalActivity1::class.java)
                 intent.putExtra("USER_NICKNAME", nickname)

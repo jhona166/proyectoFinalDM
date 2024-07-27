@@ -38,8 +38,8 @@ class LoginFragmentVM:ViewModel() {
                     }
 
                 }
-            delay(3000)
-            uiState.postValue(UIStates.LoadingState(false))
+            delay(500)
+            uiState.postValue(UIStates.LoadingState(true))
         }
 
 
@@ -59,7 +59,7 @@ class LoginFragmentVM:ViewModel() {
                 }
             }
             delay(500)
-            uiState.postValue(UIStates.LoadingState(false))
+            uiState.postValue(UIStates.LoadingState(true))
         }
     }
 }

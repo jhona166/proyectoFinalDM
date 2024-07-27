@@ -8,7 +8,7 @@
         android:icon="@drawable/morty"
 
         android:iconTint="#000000"
-        android:title="Personajes"
+        android:title="Pagina 1"
         android:visible="true"
         tools:layout="@layout/fragment_rick_and_morty"/>
 
@@ -22,7 +22,7 @@
     <item
         android:id="@+id/chatgpt"
         android:icon="@drawable/movie"
-        android:title="Episodios"
+        android:title="Pagina 2"
 
         android:visible="true" />
 </menu>
