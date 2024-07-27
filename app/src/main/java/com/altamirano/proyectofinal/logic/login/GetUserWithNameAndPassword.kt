@@ -31,8 +31,8 @@ class GetUserWithNameAndPassword(
             emit(
                 Result.failure(
                     Exception(
-                        "Usuario o contraseña incorrecta. " +
-                                "Revise los datos y vuelva a intentarlo"
+                        "No hay coincidencia con esos valores. " +
+                                "Por favor revise los valores ingresados y vuelva a intentarlo"
                     )
                 )
             )

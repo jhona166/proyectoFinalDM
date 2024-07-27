@@ -6,7 +6,7 @@ plugins {
 
     id ("kotlin-parcelize")
 
-
+    id("com.google.gms.google-services")
 
 }
 
@@ -60,7 +60,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
+    implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -86,7 +86,8 @@ dependencies {
     // SplashScreen
     implementation("androidx.core:core-splashscreen:1.0.1")
 
-
+// DataStore
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
 
 
     // Fragment, activity viewmodel
@@ -103,4 +104,18 @@ dependencies {
 
     implementation("com.squareup.picasso:picasso:2.8")
 
+
+    // Firebase SDK
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation("com.google.firebase:firebase-analytics")
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Declare the dependency for the Cloud Firestore library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-firestore")
+
+    
 }

@@ -1,7 +1,7 @@
-
+package com.altamirano.proyectofinal.ui.core
 import android.content.Context
 import android.view.View
-import com.altamirano.proyectofinal.ui.core.UIStates
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 

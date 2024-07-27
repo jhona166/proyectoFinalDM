@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "464930785795",
+    "project_id": "proyectofinal-4775a",
+    "storage_bucket": "proyectofinal-4775a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464930785795:android:fa448bd618ed127b6c9c36",
+        "android_client_info": {
+          "package_name": "com.altamirano.proyectofinal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClSw-7vNYTgnbmDpLBqgtKCn4fiNfCo3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
